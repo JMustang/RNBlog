@@ -1,11 +1,23 @@
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
+import { getAllPosts } from "../repository/postRepository";
+import { useState } from "react";
 
 export default function Page() {
+  // getAllPosts();
+  const [posts, setPosts] = useState(getAllPosts())
+
   return (
     <View style={styles.container}>
       <View style={styles.main}>
-        <Text style={styles.title}>Un World</Text>
-        <Text style={styles.subtitle}>First page of your app.</Text>
+        <FlatList
+          data={posts}
+          contentContainerStyle={{gap: 20}}
+          renderItem={({ item }) => (
+            <Text style={{ fontSize: 16, fontWeight: '500', color: '#fff' }}>
+              {item.title}
+            </Text>
+          )}
+        />
       </View>
     </View>
   );
@@ -14,12 +26,13 @@ export default function Page() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
+    // alignItems: "center",
     padding: 24,
+    backgroundColor: "#111",
   },
   main: {
     flex: 1,
-    justifyContent: "center",
+    // justifyContent: "center",
     maxWidth: 960,
     marginHorizontal: "auto",
   },
