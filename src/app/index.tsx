@@ -1,6 +1,7 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import { getAllPosts } from "../repository/postRepository";
 import { useState } from "react";
+import { Link } from "expo-router";
 
 export default function Page() {
   // getAllPosts();
@@ -13,9 +14,9 @@ export default function Page() {
           data={posts}
           contentContainerStyle={{gap: 20}}
           renderItem={({ item }) => (
-            <Text style={{ fontSize: 16, fontWeight: '500', color: '#fff' }}>
+            <Link href={`/${item.slug}`} style={{ fontSize: 16, fontWeight: '500', color: '#fff' }}>
               {item.title}
-            </Text>
+            </Link>
           )}
         />
       </View>
