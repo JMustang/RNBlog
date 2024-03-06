@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 import React, { useState } from 'react'
-import { useLocalSearchParams } from 'expo-router'
+import { Stack, useLocalSearchParams } from 'expo-router'
 import { getPost } from '../repository/postRepository'
 
 
@@ -14,6 +14,7 @@ const PostDetailsPage = () => {
 
   return (
     <View>
+          {/* <Stack.Screen options={{ title: post.title }} /> */}
           <Text>{ [post.title, post.description] }</Text>
     </View>
   )
