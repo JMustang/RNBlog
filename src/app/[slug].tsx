@@ -13,9 +13,18 @@ const PostDetailsPage = () => {
     }
 
   return (
-    <View>
+    <View
+      style={{
+        flex: 1,
+        maxWidth: 960,
+        width: "100%",
+        marginHorizontal: "auto",
+        backgroundColor: '#270247',
+        padding: 20,
+      }}
+    >
           {/* <Stack.Screen options={{ title: post.title }} /> */}
-          <Text>{ [post.title, post.description] }</Text>
+          <Text style={{color: '#fff'}}>{ [post.title, post.description] }</Text>
     </View>
   )
 }
