@@ -16,7 +16,7 @@ const PostDetailsPage = () => {
     <ScrollView
       style={{
         flex: 1,
-        backgroundColor: '#270247',
+        backgroundColor: '#F7A570',
       }}
       contentContainerStyle={{
         maxWidth: 960,
@@ -27,7 +27,7 @@ const PostDetailsPage = () => {
     >
           {/* <Stack.Screen options={{ title: post.title }} /> */}
       <Text style={{
-        marginBottom: 20, fontSize: 30, color: '#fff'
+        marginBottom: 20, fontSize: 30, color: '#111'
       }}>
         {post.title}
       </Text>
