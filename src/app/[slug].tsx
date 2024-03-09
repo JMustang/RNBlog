@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Stack, useLocalSearchParams } from 'expo-router'
 import { getAllPosts, getPost } from '../repository/postRepository'
 import Markdown from 'react-native-markdown-display'
+import Head from 'expo-router/head'
 
 export async function generateStaticParams(): Promise<Record<string, string>[]> {
   const posts = await getAllPosts()
@@ -18,6 +19,11 @@ const PostDetailsPage = () => {
     }
 
   return (
+    <>
+      <Head>
+                <title>{post.title}</title>
+                <meta name="description" content={post.description} />
+      </Head>
     <ScrollView
       style={{
         flex: 1,
@@ -37,7 +43,8 @@ const PostDetailsPage = () => {
         {post.title}
       </Text>
       <Markdown>{ post.content }</Markdown>
-    </ScrollView>
+      </ScrollView>
+      </>
   )
 }
 
